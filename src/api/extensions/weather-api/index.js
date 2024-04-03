@@ -9,7 +9,7 @@ module.exports = ({ config }) => {
     const { accessToken } = config.extensions.weather;
     var url;
 
-    if (!date) {
+    if (!date || date === '') {
       url = `http://api.weatherapi.com/v1/current.json?key=${accessToken}&q=Riga&aqi=no`;
     } else {
       url = `http://api.weatherapi.com/v1/future.json?key=${accessToken}&q=Riga&dt=${date}`;
